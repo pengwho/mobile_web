@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鈺博科技 - iPhone 二手手機批發</title>
+    <title>EPRO Tech - iPhone 二手手機批發</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +32,23 @@
         .hero-bg {
             background: linear-gradient(to bottom, #eff6ff, #dbeafe); /* Light blue gradient */
         }
+
+        /* Custom fluid typography using clamp() */
+        .fluid-h1 {
+            font-size: clamp(1.25rem, 5vw, 4rem); /* 20px to 64px */
+        }
+        .fluid-h2 {
+            font-size: clamp(1.875rem, 3vw, 2.25rem); /* 30px to 36px */
+        }
+        .fluid-h3 {
+            font-size: clamp(1.125rem, 2.5vw, 1.25rem); /* 18px to 20px */
+        }
+        .fluid-p-hero {
+            font-size: clamp(0.75rem, 2.5vw, 1.5rem); /* 12px to 24px */
+        }
+        .fluid-p-body {
+            font-size: clamp(1rem, 1.5vw, 1.125rem); /* 16px to 18px */
+        }
     </style>
 </head>
 <body class="bg-slate-50">
@@ -39,7 +56,11 @@
     <!-- Navbar -->
     <nav class="sticky top-0 z-50 bg-white shadow-md py-4">
         <div class="container mx-auto flex justify-between items-center px-4">
-            <a href="#home" class="text-xl sm:text-2xl font-extrabold text-blue-700 section-title whitespace-nowrap" data-key="companyName">鈺博科技</a>
+            <!-- 更改為 Logo 圖片，並預留 400x100 比例的空間 -->
+            <a href="#home" class="flex-shrink-0" aria-label="EPRO Tech Home">
+                <!-- 調整圖片類別以實現更好的響應式效果，新增 object-contain -->
+                <img src="img/logo400x100.png" alt="EPRO Tech Logo" class="max-w-full h-auto max-h-10 rounded-md object-contain">
+            </a>
             <ul class="hidden md:flex space-x-8">
                 <li><a href="#home" class="nav-link text-slate-600 hover:text-blue-600 transition-colors duration-200 active" data-key="navHome">首頁</a></li>
                 <li><a href="#about" class="nav-link text-slate-600 hover:text-blue-600 transition-colors duration-200" data-key="navAbout">關於我們</a></li>
@@ -69,11 +90,12 @@
 
         <!-- Hero Section -->
         <section id="home" class="hero-bg rounded-2xl p-8 md:p-16 text-center mb-16 md:mb-24 shadow-lg">
-            <h1 class="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-blue-800 section-title mb-4 md:whitespace-nowrap" data-key="heroTitle">
-                專業 iPhone 二手手機批發
-            </h1>
-            <p class="text-xs sm:text-base md:text-xl lg:text-2xl text-slate-700 max-w-3xl mx-auto mb-8 md:whitespace-nowrap" data-key="heroSubtitle">
-                鈺博科技：您的穩定貨源，品質保證，價格具競爭力
+            <!-- 將 h1 的 Tailwind 字體大小類別替換為 fluid-h1 -->
+            <h1 class="font-extrabold text-blue-800 section-title mb-4 fluid-h1" data-key="heroTitle">
+            專業 iPhone 二手手機批發</h1>
+            <!-- 將 p 的 Tailwind 字體大小類別替換為 fluid-p-hero -->
+            <p class="text-slate-700 max-w-3xl mx-auto mb-8 fluid-p-hero" data-key="heroSubtitle">
+                EPRO Tech：您的穩定貨源，品質保證，價格具競爭力
             </p>
             <a href="#contact" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors duration-300 text-lg shadow-md hover:shadow-xl" data-key="heroCta">
                 立即洽詢批發
@@ -83,20 +105,24 @@
         <!-- About Us Section -->
         <section id="about" class="mb-16 md:mb-24 bg-white p-8 md:p-12 rounded-2xl shadow-lg">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl section-title mb-3" data-key="aboutTitle">關於我們</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto" data-key="aboutSubtitle">鈺博科技深耕二手手機批發市場多年，專注於提供高品質的iPhone全系列二手機。我們致力於成為通訊行、零售商最值得信賴的合作夥伴。</p>
+                <!-- 將 h2 的 Tailwind 字體大小類別替換為 fluid-h2 -->
+                <h2 class="section-title mb-3 fluid-h2" data-key="aboutTitle">關於我們</h2>
+                <!-- 將 p 的 Tailwind 字體大小類別替換為 fluid-p-body -->
+                <p class="text-slate-600 max-w-2xl mx-auto fluid-p-body" data-key="aboutSubtitle">EPRO Tech深耕二手手機批發市場多年，專注於提供高品質的iPhone全系列二手機。我們致力於成為通訊行、零售商最值得信賴的合作夥伴。</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                    <p class="text-slate-700 leading-relaxed mb-4" data-key="aboutParagraph1">
-                        我們理解在競爭激烈的市場中，穩定的貨源、可靠的品質和合理的價格是您成功的關鍵。因此，鈺博科技建立了嚴謹的採購與檢測流程，確保每一台出貨的iPhone二手機都符合高標準。
+                    <!-- 將 p 的 Tailwind 字體大小類別替換為 fluid-p-body -->
+                    <p class="text-slate-700 leading-relaxed mb-4 fluid-p-body" data-key="aboutParagraph1">
+                        我們理解在競爭激烈的市場中，穩定的貨源、可靠的品質和合理的價格是您成功的關鍵。因此，EPRO Tech建立了嚴謹的採購與檢測流程，確保每一台出貨的iPhone二手機都符合高標準。
                     </p>
-                    <p class="text-slate-700 leading-relaxed" data-key="aboutParagraph2">
-                        選擇鈺博科技，您不僅獲得了優質產品，更獲得了專業的售後服務與市場洞察支援，讓您的業務發展無後顧之憂。
+                    <!-- 將 p 的 Tailwind 字體大小類別替換為 fluid-p-body -->
+                    <p class="text-slate-700 leading-relaxed fluid-p-body" data-key="aboutParagraph2">
+                        選擇EPRO Tech，您不僅獲得了優質產品，更獲得了專業的售後服務與市場洞察支援，讓您的業務發展無後顧之憂。
                     </p>
                 </div>
                 <div class="flex justify-center">
-                    <img src="https://placehold.co/600x400/e0e7ff/1e40af?text=Professional+Team" alt="專業團隊" class="rounded-xl shadow-md">
+                    <img src="img/EPRO_外觀600x400.png" alt="專業團隊" class="rounded-xl shadow-md">
                 </div>
             </div>
         </section>
@@ -104,29 +130,33 @@
         <!-- Our Advantages Section -->
         <section id="advantages" class="mb-16 md:mb-24 bg-slate-100 py-16 rounded-2xl shadow-lg">
             <div class="text-center mb-12 px-4">
-                <h2 class="text-3xl md:text-4xl section-title mb-3" data-key="advantagesTitle">我們的核心優勢</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto" data-key="advantagesSubtitle">鈺博科技專為批發客戶打造，提供您在iPhone二手機市場中脫穎而出的關鍵優勢。</p>
+                <!-- 將 h2 的 Tailwind 字體大小類別替換為 fluid-h2 -->
+                <h2 class="section-title mb-3 fluid-h2" data-key="advantagesTitle">我們的核心優勢</h2>
+                <!-- 將 p 的 Tailwind 字體大小類別替換為 fluid-p-body -->
+                <p class="text-slate-600 max-w-2xl mx-auto fluid-p-body" data-key="advantagesSubtitle">EPRO Tech專為批發客戶打造，提供您在iPhone二手機市場中脫穎而出的關鍵優勢。</p>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 px-8">
                 <div class="text-center bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
                     <div class="flex items-center justify-center w-20 h-20 mx-auto rounded-full bg-blue-100 text-blue-600 mb-4 text-4xl">📦</div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-2" data-key="adv1Title">穩定多元貨源</h4>
-                    <p class="text-sm text-slate-600" data-key="adv1Desc">全年穩定供應iPhone全系列，熱銷機型不斷貨，滿足多樣需求。</p>
+                    <!-- 將 h4 的 Tailwind 字體大小類別替換為 fluid-h3 (h4 視覺上與 h3 相似，故使用相同類別) -->
+                    <h4 class="font-bold text-slate-800 mb-2 fluid-h3" data-key="adv1Title">穩定多元貨源</h4>
+                    <!-- 將 p 的 Tailwind 字體大小類別替換為 fluid-p-body -->
+                    <p class="text-slate-600 fluid-p-body" data-key="adv1Desc">全年穩定供應iPhone全系列，熱銷機型不斷貨，滿足多樣需求。</p>
                 </div>
                 <div class="text-center bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
                     <div class="flex items-center justify-center w-20 h-20 mx-auto rounded-full bg-blue-100 text-blue-600 mb-4 text-4xl">✅</div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-2" data-key="adv2Title">嚴格品管分級</h4>
-                    <p class="text-sm text-slate-600" data-key="adv2Desc">獨家專業檢測流程，確保功能完好，提供透明外觀分級。</p>
+                    <h4 class="font-bold text-slate-800 mb-2 fluid-h3" data-key="adv2Title">嚴格品管分級</h4>
+                    <p class="text-slate-600 fluid-p-body" data-key="adv2Desc">獨家專業檢測流程，確保功能完好，提供透明外觀分級。</p>
                 </div>
                 <div class="text-center bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
                     <div class="flex items-center justify-center w-20 h-20 mx-auto rounded-full bg-blue-100 text-blue-600 mb-4 text-4xl">💸</div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-2" data-key="adv3Title">具競爭力價格</h4>
-                    <p class="text-sm text-slate-600" data-key="adv3Desc">大規模採購優勢，提供市場最具競爭力的批發價格，提升利潤空間。</p>
+                    <h4 class="font-bold text-slate-800 mb-2 fluid-h3" data-key="adv3Title">具競爭力價格</h4>
+                    <p class="text-slate-600 fluid-p-body" data-key="adv3Desc">大規模採購優勢，提供市場最具競爭力的批發價格，提升利潤空間。</p>
                 </div>
                 <div class="text-center bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
                     <div class="flex items-center justify-center w-20 h-20 mx-auto rounded-full bg-blue-100 text-blue-600 mb-4 text-4xl">🛡️</div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-2" data-key="adv4Title">完善售後保障</h4>
-                    <p class="text-sm text-slate-600" data-key="adv4Desc">提供專屬保固政策與明確退換貨流程，讓您銷售無後顧之憂。</p>
+                    <h4 class="font-bold text-slate-800 mb-2 fluid-h3" data-key="adv4Title">完善售後保障</h4>
+                    <p class="text-slate-600 fluid-p-body" data-key="adv4Desc">提供專屬保固政策與明確退換貨流程，讓您銷售無後顧之憂。</p>
                 </div>
             </div>
         </section>
@@ -134,29 +164,33 @@
         <!-- Wholesale Process Section -->
         <section id="process" class="mb-16 md:mb-24 bg-white p-8 md:p-12 rounded-2xl shadow-lg">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl section-title mb-3" data-key="processTitle">批發流程</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto" data-key="processSubtitle">簡單四步驟，輕鬆開啟您的iPhone二手機批發之旅。</p>
+                <!-- 將 h2 的 Tailwind 字體大小類別替換為 fluid-h2 -->
+                <h2 class="section-title mb-3 fluid-h2" data-key="processTitle">批發流程</h2>
+                <!-- 將 p 的 Tailwind 字體大小類別替換為 fluid-p-body -->
+                <p class="text-slate-600 max-w-2xl mx-auto fluid-p-body" data-key="processSubtitle">簡單四步驟，輕鬆開啟您的iPhone二手機批發之旅。</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="flex flex-col items-center text-center p-6 bg-slate-50 rounded-lg shadow-sm">
                     <div class="w-16 h-16 flex items-center justify-center bg-blue-600 text-white rounded-full text-3xl font-bold mb-4">1</div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2" data-key="proc1Title">聯繫洽詢</h3>
-                    <p class="text-slate-600" data-key="proc1Desc">透過電話、Line或Email聯繫我們，表達您的批發需求。</p>
+                    <!-- 將 h3 的 Tailwind 字體大小類別替換為 fluid-h3 -->
+                    <h3 class="font-bold text-slate-800 mb-2 fluid-h3" data-key="proc1Title">聯繫洽詢</h3>
+                    <!-- 將 p 的 Tailwind 字體大小類別替換為 fluid-p-body -->
+                    <p class="text-slate-600 fluid-p-body" data-key="proc1Desc">透過電話、Line或Email聯繫我們，表達您的批發需求。</p>
                 </div>
                 <div class="flex flex-col items-center text-center p-6 bg-slate-50 rounded-lg shadow-sm">
                     <div class="w-16 h-16 flex items-center justify-center bg-blue-600 text-white rounded-full text-3xl font-bold mb-4">2</div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2" data-key="proc2Title">獲取報價</h3>
-                    <p class="text-slate-600" data-key="proc2Desc">我們將提供最新庫存清單與具競爭力的批發價格。</p>
+                    <h3 class="font-bold text-slate-800 mb-2 fluid-h3" data-key="proc2Title">獲取報價</h3>
+                    <p class="text-slate-600 fluid-p-body" data-key="proc2Desc">我們將提供最新庫存清單與具競爭力的批發價格。</p>
                 </div>
                 <div class="flex flex-col items-center text-center p-6 bg-slate-50 rounded-lg shadow-sm">
                     <div class="w-16 h-16 flex items-center justify-center bg-blue-600 text-white rounded-full text-3xl font-bold mb-4">3</div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2" data-key="proc3Title">確認訂單</h3>
-                    <p class="text-slate-600" data-key="proc3Desc">根據您的需求，選購機型與數量，並確認付款方式。</p>
+                    <h3 class="font-bold text-slate-800 mb-2 fluid-h3" data-key="proc3Title">確認訂單</h3>
+                    <p class="text-slate-600 fluid-p-body" data-key="proc3Desc">根據您的需求，選購機型與數量，並確認付款方式。</p>
                 </div>
                 <div class="flex flex-col items-center text-center p-6 bg-slate-50 rounded-lg shadow-sm">
                     <div class="w-16 h-16 flex items-center justify-center bg-blue-600 text-white rounded-full text-3xl font-bold mb-4">4</div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2" data-key="proc4Title">快速出貨</h3>
-                    <p class="text-slate-600" data-key="proc4Desc">確認付款後，我們將迅速安排出貨，確保您及時補足庫存。</p>
+                    <h3 class="font-bold text-slate-800 mb-2 fluid-h3" data-key="proc4Title">快速出貨</h3>
+                    <p class="text-slate-600 fluid-p-body" data-key="proc4Desc">確認付款後，我們將迅速安排出貨，確保您及時補足庫存。</p>
                 </div>
             </div>
         </section>
@@ -164,43 +198,46 @@
         <!-- Product List Section -->
         <section id="products" class="mb-16 md:mb-24 bg-slate-100 py-16 rounded-2xl shadow-lg">
             <div class="text-center mb-12 px-4">
-                <h2 class="text-3xl md:text-4xl section-title mb-3" data-key="productsTitle">產品列表</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto" data-key="productsSubtitle">我們提供全系列iPhone二手機，涵蓋各世代與容量，滿足您的多元需求。</p>
+                <!-- 將 h2 的 Tailwind 字體大小類別替換為 fluid-h2 -->
+                <h2 class="section-title mb-3 fluid-h2" data-key="productsTitle">產品列表</h2>
+                <!-- 將 p 的 Tailwind 字體大小類別替換為 fluid-p-body -->
+                <p class="text-slate-600 max-w-2xl mx-auto fluid-p-body" data-key="productsSubtitle">我們提供全系列iPhone二手機，涵蓋各世代與容量，滿足您的多元需求。</p>
             </div>
             <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-8">
                 <!-- Product Card 1 -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://placehold.co/400x300/e0e7ff/1e40af?text=iPhone+Latest" alt="iPhone 最新型號" class="w-full h-48 object-cover">
+                    <img src="img/iphone-16-pro-400x300.png" alt="iPhone 最新型號" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-800 mb-2" data-key="prod1Title">最新型號系列</h3>
-                        <p class="text-slate-600 text-sm" data-key="prod1Desc">提供市場最新、最熱門的iPhone型號，確保您的產品線領先。</p>
+                        <!-- 將 h3 的 Tailwind 字體大小類別替換為 fluid-h3 -->
+                        <h3 class="font-bold text-slate-800 mb-2 fluid-h3" data-key="prod1Title">最新型號系列</h3>
+                        <p class="text-slate-600 fluid-p-body" data-key="prod1Desc">提供市場最新、最熱門的iPhone型號，確保您的產品線領先。</p>
                         <a href="#contact" class="text-blue-600 hover:text-blue-800 font-semibold mt-3 inline-block" data-key="learnMore">了解更多 &rarr;</a>
                     </div>
                 </div>
                 <!-- Product Card 2 -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://placehold.co/400x300/e0e7ff/1e40af?text=iPhone+Popular" alt="iPhone 熱門型號" class="w-full h-48 object-cover">
+                    <img src="img/iphone-13-400x300.png" alt="iPhone 熱門型號" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-800 mb-2" data-key="prod2Title">經典熱門系列</h3>
-                        <p class="text-slate-600 text-sm" data-key="prod2Desc">市場需求量大、流通性高的經典iPhone型號，穩定獲利。</p>
+                        <h3 class="font-bold text-slate-800 mb-2 fluid-h3" data-key="prod2Title">經典熱門系列</h3>
+                        <p class="text-slate-600 fluid-p-body" data-key="prod2Desc">市場需求量大、流通性高的經典iPhone型號，穩定獲利。</p>
                         <a href="#contact" class="text-blue-600 hover:text-blue-800 font-semibold mt-3 inline-block" data-key="learnMore">了解更多 &rarr;</a>
                     </div>
                 </div>
                 <!-- Product Card 3 -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://placehold.co/400x300/e0e7ff/1e40af?text=iPhone+Value" alt="iPhone 高CP值型號" class="w-full h-48 object-cover">
+                    <img src="img/iphone-x-400x300.png" alt="iPhone 高CP值型號" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-800 mb-2" data-key="prod3Title">高CP值系列</h3>
-                        <p class="text-slate-600 text-sm" data-key="prod3Desc">性價比優越，適合預算型客戶，拓展更廣泛的市場。</p>
+                        <h3 class="font-bold text-slate-800 mb-2 fluid-h3" data-key="prod3Title">高CP值系列</h3>
+                        <p class="text-slate-600 fluid-p-body" data-key="prod3Desc">性價比優越，適合預算型客戶，拓展更廣泛的市場。</p>
                         <a href="#contact" class="text-blue-600 hover:text-blue-800 font-semibold mt-3 inline-block" data-key="learnMore">了解更多 &rarr;</a>
                     </div>
                 </div>
                 <!-- Product Card 4 (Placeholder for more products) -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://placehold.co/400x300/e0e7ff/1e40af?text=iPhone+Custom" alt="iPhone 客製化需求" class="w-full h-48 object-cover">
+                    <img src="img/all-the-iphones-400x300.png" alt="iPhone 客製化需求" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-800 mb-2" data-key="prod4Title">客製化需求</h3>
-                        <p class="text-slate-600 text-sm" data-key="prod4Desc">若有特殊機型或大量需求，歡迎聯繫我們進行客製化採購。</p>
+                        <h3 class="font-bold text-slate-800 mb-2 fluid-h3" data-key="prod4Title">客製化需求</h3>
+                        <p class="text-slate-600 fluid-p-body" data-key="prod4Desc">若有特殊機型或大量需求，歡迎聯繫我們進行客製化採購。</p>
                         <a href="#contact" class="text-blue-600 hover:text-blue-800 font-semibold mt-3 inline-block" data-key="learnMore">了解更多 &rarr;</a>
                     </div>
                 </div>
@@ -210,27 +247,35 @@
         <!-- Contact Us Section -->
         <section id="contact" class="mb-16 md:mb-24 bg-white p-8 md:p-12 rounded-2xl shadow-lg">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl section-title mb-3" data-key="contactTitle">聯絡我們</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto" data-key="contactSubtitle">對iPhone二手機批發有任何疑問或需求？歡迎隨時與我們聯繫！</p>
+                <!-- 將 h2 的 Tailwind 字體大小類別替換為 fluid-h2 -->
+                <h2 class="section-title mb-3 fluid-h2" data-key="contactTitle">聯絡我們</h2>
+                <!-- 將 p 的 Tailwind 字體大小類別替換為 fluid-p-body -->
+                <p class="text-slate-600 max-w-2xl mx-auto fluid-p-body" data-key="contactSubtitle">對iPhone二手機批發有任何疑問或需求？歡迎隨時與我們聯繫！</p>
             </div>
             <div class="grid md:grid-cols-2 gap-12">
                 <div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-4" data-key="contactInfoTitle">聯絡資訊</h3>
-                    <p class="text-slate-700 mb-2">
-                        <span class="font-semibold" data-key="phoneLabel">電話：</span><a href="tel:+886-XXXXXXXXXX" class="text-blue-600 hover:underline">+886-XXXXXXXXXX</a>
+                    <!-- 將 h3 的 Tailwind 字體大小類別替換為 fluid-h3 -->
+                    <h3 class="font-bold text-slate-800 mb-4 fluid-h3" data-key="contactInfoTitle">聯絡資訊</h3>
+                    <!-- 將 p 的 Tailwind 字體大小類別替換為 fluid-p-body -->
+                    <p class="text-slate-700 mb-2 fluid-p-body">
+                        <span class="font-semibold" data-key="phoneLabel">電話：</span><a href="tel:+886-XXXXXXXXXX" class="text-blue-600 hover:underline">+886-955866588</a>
                     </p>
-                    <p class="text-slate-700 mb-2">
-                        <span class="font-semibold" data-key="lineIdLabel">Line ID：</span><span class="text-blue-600">@your_line_id</span>
+                    <p class="text-slate-700 mb-2 fluid-p-body">
+                        <span class="font-semibold" data-key="lineIdLabel">Line ID：</span><span class="text-blue-600">0955866588</span>
                     </p>
-                    <p class="text-slate-700 mb-2">
-                        <span class="font-semibold" data-key="emailLabel">Email：</span><a href="mailto:info@eprolcd.com.tw" class="text-blue-600 hover:underline">info@eprolcd.com.tw</a>
+                    <p class="text-slate-700 mb-2 fluid-p-body">
+                        <span class="font-semibold" data-key="WeChatLabel">WeChat ID：</span><span class="text-blue-600">PHONEKING888</span>
                     </p>
-                    <p class="text-slate-700 mb-2">
-                        <span class="font-semibold" data-key="addressLabel">地址：</span><span data-key="addressContent">[您的公司地址，例如：台灣台北市信義區XX路XX號]</span>
+                    <p class="text-slate-700 mb-2 fluid-p-body">
+                        <span class="font-semibold" data-key="emailLabel">Email：</span><a href="mailto:info@eprolcd.com.tw" class="text-blue-600 hover:underline">jacky@eprolcd.com.tw</a>
+                    </p>
+                    <p class="text-slate-700 mb-2 fluid-p-body">
+                        <span class="font-semibold" data-key="addressLabel">地址：</span><span data-key="addressContent">公司地址：苗栗縣竹南鎮友義路66號(廣源科技園區)</span>
                     </p>
                 </div>
                 <div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-4" data-key="sendMessageTitle">發送訊息給我們</h3>
+                    <!-- 將 h3 的 Tailwind 字體大小類別替換為 fluid-h3 -->
+                    <h3 class="font-bold text-slate-800 mb-4 fluid-h3" data-key="sendMessageTitle">發送訊息給我們</h3>
                     <form id="contact-form" class="space-y-4">
                         <div>
                             <label for="name" class="block text-slate-700 text-sm font-bold mb-2" data-key="formNameLabel">您的姓名</label>
@@ -257,7 +302,7 @@
 
     <footer class="bg-slate-800 text-white py-8 text-center">
         <div class="container mx-auto px-4">
-            <p data-key="footerCopyright">&copy; 2025 鈺博科技. All rights reserved.</p>
+            <p data-key="footerCopyright">&copy; 2025 EPRO Tech. All rights reserved.</p>
             <p class="text-sm mt-2" data-key="footerTagline">專業 iPhone 二手手機批發服務</p>
         </div>
     </footer>
@@ -265,7 +310,7 @@
     <script>
         const translations = {
             'zh-TW': {
-                companyName: '鈺博科技',
+                companyName: 'EPRO Tech',
                 navHome: '首頁',
                 navAbout: '關於我們',
                 navAdvantages: '我們的優勢',
@@ -273,14 +318,14 @@
                 navProducts: '產品列表',
                 navContact: '聯絡我們',
                 heroTitle: '專業 iPhone 二手手機批發',
-                heroSubtitle: '鈺博科技：您的穩定貨源，品質保證，價格具競爭力',
+                heroSubtitle: 'EPRO Tech：您的穩定貨源，品質保證，價格具競爭力',
                 heroCta: '立即洽詢批發',
                 aboutTitle: '關於我們',
-                aboutSubtitle: '鈺博科技深耕二手手機批發市場多年，專注於提供高品質的iPhone全系列二手機。我們致力於成為通訊行、零售商最值得信賴的合作夥伴。',
-                aboutParagraph1: '我們理解在競爭激烈的市場中，穩定的貨源、可靠的品質和合理的價格是您成功的關鍵。因此，鈺博科技建立了嚴謹的採購與檢測流程，確保每一台出貨的iPhone二手機都符合高標準。',
-                aboutParagraph2: '選擇鈺博科技，您不僅獲得了優質產品，更獲得了專業的售後服務與市場洞察支援，讓您的業務發展無後顧之憂。',
+                aboutSubtitle: 'EPRO Tech深耕二手手機批發市場多年，專注於提供高品質的iPhone全系列二手機。我們致力於成為通訊行、零售商最值得信賴的合作夥伴。',
+                aboutParagraph1: '我們理解在競爭激烈的市場中，穩定的貨源、可靠的品質和合理的價格是您成功的關鍵。因此，EPRO Tech建立了嚴謹的採購與檢測流程，確保每一台出貨的iPhone二手機都符合高標準。',
+                aboutParagraph2: '選擇EPRO Tech，您不僅獲得了優質產品，更獲得了專業的售後服務與市場洞察支援，讓您的業務發展無後顧之憂。',
                 advantagesTitle: '我們的核心優勢',
-                advantagesSubtitle: '鈺博科技專為批發客戶打造，提供您在iPhone二手機市場中脫穎而出的關鍵優勢。',
+                advantagesSubtitle: 'EPRO Tech專為批發客戶打造，提供您在iPhone二手機市場中脫穎而出的關鍵優勢。',
                 adv1Title: '穩定多元貨源',
                 adv1Desc: '全年穩定供應iPhone全系列，熱銷機型不斷貨，滿足多樣需求。',
                 adv2Title: '嚴格品管分級',
@@ -317,7 +362,7 @@
                 lineIdLabel: 'Line ID：',
                 emailLabel: 'Email：',
                 addressLabel: '地址：',
-                addressContent: '[您的公司地址，例如：台灣台北市信義區XX路XX號]',
+                addressContent: '苗栗縣竹南鎮友義路66號(廣源科技園區)',
                 sendMessageTitle: '發送訊息給我們',
                 formNameLabel: '您的姓名',
                 formNamePlaceholder: '請輸入您的姓名',
@@ -329,11 +374,11 @@
                 formSending: '訊息傳送中...',
                 formSuccess: '訊息已成功送出，感謝您的洽詢！',
                 formError: '請填寫所有必填欄位。',
-                footerCopyright: '&copy; 2025 鈺博科技. All rights reserved.',
+                footerCopyright: '&copy; 2025 EPRO Tech. All rights reserved.',
                 footerTagline: '專業 iPhone 二手手機批發服務'
             },
             en: {
-                companyName: 'Yu Bo Technology',
+                companyName: 'EPRO Tech',
                 navHome: 'Home',
                 navAbout: 'About Us',
                 navAdvantages: 'Our Advantages',
@@ -341,14 +386,14 @@
                 navProducts: 'Product List',
                 navContact: 'Contact Us',
                 heroTitle: 'Professional iPhone Used Phone Wholesale',
-                heroSubtitle: 'Yu Bo Technology: Your Stable Source, Quality Guaranteed, Competitive Pricing',
+                heroSubtitle: 'EPRO Tech: Your Stable Source, Quality Guaranteed, Competitive Pricing',
                 heroCta: 'Inquire Now',
                 aboutTitle: 'About Us',
-                aboutSubtitle: 'Yu Bo Technology has been deeply involved in the used phone wholesale market for years, specializing in providing high-quality, full-range used iPhones. We are committed to being the most trusted partner for communication stores and retailers.',
-                aboutParagraph1: 'We understand that in a competitive market, stable supply, reliable quality, and reasonable prices are key to your success. Therefore, Yu Bo Technology has established rigorous procurement and inspection processes to ensure that every used iPhone shipped meets high standards.',
-                aboutParagraph2: 'By choosing Yu Bo Technology, you not only gain access to quality products but also professional after-sales service and market insights, allowing your business to develop without worries.',
+                aboutSubtitle: 'EPRO Tech has been deeply involved in the used phone wholesale market for years, specializing in providing high-quality, full-range used iPhones. We are committed to being the most trusted partner for communication stores and retailers.',
+                aboutParagraph1: 'We understand that in a competitive market, stable supply, reliable quality, and reasonable prices are key to your success. Therefore, EPRO Tech has established rigorous procurement and inspection processes to ensure that every used iPhone shipped meets high standards.',
+                aboutParagraph2: 'By choosing EPRO Tech, you not only gain access to quality products but also professional after-sales service and market insights, allowing your business to develop without worries.',
                 advantagesTitle: 'Our Core Advantages',
-                advantagesSubtitle: 'Yu Bo Technology is tailored for wholesale clients, providing you with key advantages to stand out in the iPhone used phone market.',
+                advantagesSubtitle: 'EPRO Tech is tailored for wholesale clients, providing you with key advantages to stand out in the iPhone used phone market.',
                 adv1Title: 'Stable & Diverse Supply',
                 adv1Desc: 'Year-round stable supply of all iPhone series, ensuring hot models are always in stock, meeting diverse demands.',
                 adv2Title: 'Strict Quality Control & Grading',
@@ -377,28 +422,96 @@
                 prod3Desc: 'Excellent cost-performance ratio, suitable for budget-conscious customers, expanding a wider market.',
                 prod4Title: 'Customized Needs',
                 prod4Desc: 'For special models or large quantity requirements, please contact us for customized procurement.',
-                learnMore: 'Learn More &rarr;',
-                contactTitle: 'Contact Us',
-                contactSubtitle: 'Have any questions or needs regarding iPhone used phone wholesale? Feel free to contact us!',
-                contactInfoTitle: 'Contact Information',
-                phoneLabel: 'Phone:',
-                lineIdLabel: 'Line ID:',
-                emailLabel: 'Email:',
-                addressLabel: 'Address:',
-                addressContent: '[Your Company Address, e.g., No. XX, XX Rd., Xinyi Dist., Taipei City, Taiwan]',
-                sendMessageTitle: 'Send Us a Message',
-                formNameLabel: 'Your Name',
-                formNamePlaceholder: 'Enter your name',
-                formEmailLabel: 'Your Email',
-                formEmailPlaceholder: 'Enter your email',
-                formMessageLabel: 'Your Message',
-                formMessagePlaceholder: 'Enter your wholesale needs or questions',
-                formSubmitBtn: 'Send Message',
-                formSending: 'Sending message...',
-                formSuccess: 'Message sent successfully, thank you for your inquiry!',
-                formError: 'Please fill in all required fields.',
-                footerCopyright: '&copy; 2025 Yu Bo Technology. All rights reserved.',
-                footerTagline: 'Professional iPhone Used Phone Wholesale Service'
+                learnMore: '了解更多 &rarr;',
+                contactTitle: '聯絡我們',
+                contactSubtitle: '對iPhone二手機批發有任何疑問或需求？歡迎隨時與我們聯繫！',
+                contactInfoTitle: '聯絡資訊',
+                phoneLabel: '電話：',
+                lineIdLabel: 'Line ID：',
+                emailLabel: 'Email：',
+                addressLabel: '地址：',
+                addressContent: '苗栗縣竹南鎮友義路66號(廣源科技園區)',
+                sendMessageTitle: '發送訊息給我們',
+                formNameLabel: '您的姓名',
+                formNamePlaceholder: '請輸入您的姓名',
+                formEmailLabel: '您的Email',
+                formEmailPlaceholder: '請輸入您的Email',
+                formMessageLabel: '您的訊息',
+                formMessagePlaceholder: '請輸入您的批發需求或疑問',
+                formSubmitBtn: '送出訊息',
+                formSending: '訊息傳送中...',
+                formSuccess: '訊息已成功送出，感謝您的洽詢！',
+                formError: '請填寫所有必填欄位。',
+                footerCopyright: '&copy; 2025 EPRO Tech. All rights reserved.',
+                footerTagline: '專業 iPhone 二手手機批發服務'
+            },
+            en: {
+                companyName: 'EPRO Tech',
+                navHome: 'Home',
+                navAbout: 'About Us',
+                navAdvantages: 'Our Advantages',
+                navProcess: 'Wholesale Process',
+                navProducts: 'Product List',
+                navContact: 'Contact Us',
+                heroTitle: 'Professional iPhone Used Phone Wholesale',
+                heroSubtitle: 'EPRO Tech: Your Stable Source, Quality Guaranteed, Competitive Pricing',
+                heroCta: 'Inquire Now',
+                aboutTitle: 'About Us',
+                aboutSubtitle: 'EPRO Tech has been deeply involved in the used phone wholesale market for years, specializing in providing high-quality, full-range used iPhones. We are committed to being the most trusted partner for communication stores and retailers.',
+                aboutParagraph1: 'We understand that in a competitive market, stable supply, reliable quality, and reasonable prices are key to your success. Therefore, EPRO Tech has established rigorous procurement and inspection processes to ensure that every used iPhone shipped meets high standards.',
+                aboutParagraph2: 'By choosing EPRO Tech, you not only gain access to quality products but also professional after-sales service and market insights, allowing your business to develop without worries.',
+                advantagesTitle: 'Our Core Advantages',
+                advantagesSubtitle: 'EPRO Tech is tailored for wholesale clients, providing you with key advantages to stand out in the iPhone used phone market.',
+                adv1Title: 'Stable & Diverse Supply',
+                adv1Desc: 'Year-round stable supply of all iPhone series, ensuring hot models are always in stock, meeting diverse demands.',
+                adv2Title: 'Strict Quality Control & Grading',
+                adv2Desc: 'Exclusive professional inspection process ensures full functionality and provides transparent cosmetic grading.',
+                adv3Title: 'Competitive Pricing',
+                adv3Desc: 'Leveraging large-scale procurement, we offer the most competitive wholesale prices in the market, increasing your profit margins.',
+                adv4Title: 'Comprehensive After-Sales Support',
+                adv4Desc: 'Provides exclusive warranty policies and clear return/exchange procedures, allowing you to sell with peace of mind.',
+                processTitle: 'Wholesale Process',
+                processSubtitle: 'Four simple steps to easily start your iPhone used phone wholesale journey.',
+                proc1Title: 'Contact Inquiry',
+                proc1Desc: 'Contact us via phone, Line, or email to express your wholesale needs.',
+                proc2Title: 'Get Quote',
+                proc2Desc: 'We will provide the latest inventory list and competitive wholesale prices.',
+                proc3Title: 'Confirm Order',
+                proc3Desc: 'Select models and quantities based on your needs, and confirm payment methods.',
+                proc4Title: 'Fast Shipping',
+                proc4Desc: 'Upon payment confirmation, we will promptly arrange shipment to ensure your inventory is replenished in time.',
+                productsTitle: 'Product List',
+                productsSubtitle: 'We offer a full range of used iPhones, covering all generations and capacities, to meet your diverse needs.',
+                prod1Title: 'Latest Models Series',
+                prod1Desc: 'Offers the latest and most popular iPhone models in the market, ensuring your product line is cutting-edge.',
+                prod2Title: 'Classic Popular Series',
+                prod2Desc: 'Classic iPhone models with high market demand and liquidity, ensuring stable profits.',
+                prod3Title: 'High CP Value Series',
+                prod3Desc: 'Excellent cost-performance ratio, suitable for budget-conscious customers, expanding a wider market.',
+                prod4Title: 'Customized Needs',
+                prod4Desc: 'For special models or large quantity requirements, please contact us for customized procurement.',
+                learnMore: '了解更多 &rarr;',
+                contactTitle: '聯絡我們',
+                contactSubtitle: '對iPhone二手機批發有任何疑問或需求？歡迎隨時與我們聯繫！',
+                contactInfoTitle: '聯絡資訊',
+                phoneLabel: '電話：',
+                lineIdLabel: 'Line ID：',
+                emailLabel: 'Email：',
+                addressLabel: '地址：',
+                addressContent: '苗栗縣竹南鎮友義路66號(廣源科技園區)',
+                sendMessageTitle: '發送訊息給我們',
+                formNameLabel: '您的姓名',
+                formNamePlaceholder: '請輸入您的姓名',
+                formEmailLabel: '您的Email',
+                formEmailPlaceholder: '請輸入您的Email',
+                formMessageLabel: '您的訊息',
+                formMessagePlaceholder: '請輸入您的批發需求或疑問',
+                formSubmitBtn: '送出訊息',
+                formSending: '訊息傳送中...',
+                formSuccess: '訊息已成功送出，感謝您的洽詢！',
+                formError: '請填寫所有必填欄位。',
+                footerCopyright: '&copy; 2025 EPRO Tech. All rights reserved.',
+                footerTagline: '專業 iPhone 二手手機批發服務'
             }
         };
 
